@@ -25,8 +25,8 @@ DEFAULTS = {
 def get_client():
     # Uses the public Hugging Face Space. It runs the heavy model remotely,
     # so your phone/laptop does not need a powerful GPU for generation.
-    return Client(SPACE_ID, hf_token=os.environ.get("HF_TOKEN"))
-
+    return Client(SPACE_ID, token=os.environ.get("HF_TOKEN"))
+    
 def find_endpoint(client, preferred):
     """Find an endpoint by its name, tolerating leading slashes."""
     info = client.view_api(return_format="dict")
